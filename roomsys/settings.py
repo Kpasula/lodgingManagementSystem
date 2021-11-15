@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#ffrkw(w-$0hy%ow&2(prb_p8&ph(^=i%*rn!fn187j6d@#=fp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'staff',
     'client',
-    'crispy_forms',
     'rooms',
 ]
 
