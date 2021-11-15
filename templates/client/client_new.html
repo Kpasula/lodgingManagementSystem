@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Client Registration{% endblock title %}
+
+{% block content %}
+            <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered table-dark">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">City</th>
+                    <th scope="col">State</th>
+                    <th scope="col">ZipCode</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+    {% for client in object_list %}
+
+                    <tr>
+
+                        <th scope="row">{{ client.name }}</th>
+                        <th scope="row">{{ client.address }}</th>
+                        <td>{{ client.city }}</td>
+                        <td>{{ client.state }}</td>
+                        <td>{{ client.zipcode }}</td>
+                        <td>{{ client.email }}</td>
+                        <td>{{ client.cell_phone }}</td>
+
+
+                        <td>
+
+                            <a type="button" class="btn btn-success" href="{% url 'client_edit' client.pk %}">Edit<i
+                                    class="fas fa-pencil" aria-hidden="true"></i></a>
+
+                        </td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock content %}

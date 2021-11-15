@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Rooms{% endblock title %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                Available Rooms: {{ available_rooms }}
+
+                <a type="button" class="btn btn-success" href="{% url 'checkin' %}">Check In Room<i
+                        class="fas fa-pencil" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered table-dark">
+                <thead>
+                <tr>
+                    <th scope="col">Room Type</th>
+                    <th scope="col">Room number</th>
+                    <th scope="col">Client Assigned</th>
+                    <th scope="col">Check In Date & Time</th>
+                    <th scope="col">Check Out Date & Time</th>
+                    <th scope="col">Check Out Room</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for room in rooms %}
+
+                    <tr>
+                    <td>{{ room.room_assigned.room_type }}</td>
+
+                    <td>{{ room.room_assigned.number }}</td>
+                    <td>{{ room.client_assigned }}</td>
+                    <td>{{ room.check_in_date }}</td>
+                    <td>{{ room.check_out_date }}</td>
+                    <td>
+                        <a type="button" class="btn btn-success" href="{% url 'check_out' room.pk %}">Check Out</a>
+                    </td>
+                {% endfor %}
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock content %}
