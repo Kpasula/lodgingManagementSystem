@@ -1,7 +1,6 @@
-from bootstrap_datepicker_plus import DatePickerInput
 from django import forms
 from django.contrib.admin.widgets import AdminDateWidget
-from django.forms import ModelForm, DateTimeInput
+from django.forms import DateTimeInput
 
 from .models import Rooms, AllocatedRooms
 
