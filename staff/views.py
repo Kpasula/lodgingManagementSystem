@@ -37,7 +37,7 @@ class SignUpView(generic.CreateView):
 class PasswordResetView(PasswordResetView):
     form_class = PasswordResetForm
     success_url = reverse_lazy('password_reset_done')
-    template_name = 'registration/password_reset.html'
+    template_name = 'registration/password_reset_form.html'
 
 
 class PasswordResetDoneView(PasswordResetDoneView):
